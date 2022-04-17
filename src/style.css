@@ -1,0 +1,11 @@
+.scroldiv{
+    width: 900px;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+.p{
+  font-family: 'Noto Sans';
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
