@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import { Button, FormControl, Stack, TextField } from '@mui/material';
 import axios from 'axios';
 
-
 function Input() {
     const [data, setData] = useState(null)
     const [titdata,setTit] = useState(null)
@@ -27,7 +26,7 @@ function Input() {
       let lig = 'https://poetrydb.org/lines/' + lindata
       axios.get(lig)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         setPosts(res.data)
       }).catch(err => console.log(err))
     }
@@ -65,48 +64,46 @@ function Input() {
     }
     function russia(ukraine,stit){
       return (
-        <div className='lawdi'>  
+        <div>  
         <h3>{stit}</h3>
         <br/>
-        { ukraine.map((tem) => 
-            (<p key={tem}> {tem} </p>))
+        {
+          ukraine.map((tem) => 
+            (<p key={stit}> {tem} </p>))
           }
           <br/>
         </div>
       )
     }
 //<CssTextField sx = {{ paddingBottom: '10px' }} onChange={getData} label="Author" id="custom-css-outlined-input" />
-  return (      
-        <Box display={"flex"} sx={{ bgcolor: '#FFFFFF' , opacity: '0.6', height: '90vh' , mx: 30 }} >
-            <Box sx={{ bgcolor: '#999999' , opacity: '1'}}>
+  return ( 
+      <Stack direction={'row'} spacing = {2} sx={{mx: 30}}>
+            <Box sx={{ bgcolor: '#FFFFFF' , opacity: '1', width: 300}}>
               <FormControl sx={{padding: '20px 40px' }}>     
                 <TextField sx = {{ paddingBottom: '10px' }} onChange={getData} color ="primary" id="outlined-basic" label="Author" variant="outlined" />
                     <TextField sx = {{ paddingBottom: '10px' }} onChange={getTit} id="outlined-basic" label="Title" color="primary" variant="outlined" />
-                    <Button onClick={callWeb} variant="contained">Find</Button>
+                    <Button color="error" onClick={callWeb} variant="contained">Find</Button>
                     {/* <Stack >
-                            <Item>{data}</Item>
+                            <Item>{data}</Item>s
                     </Stack> */}
                     <br/>
                     <TextField sx = {{ paddingBottom: '10px' }} onChange={getLine} id="outlined-basic" label="Line" variant="outlined" />
-                    <Button onClick={flines} variant="contained">Find by Line</Button>
+                    <Button color="error" onClick={flines} variant="contained">Find by Line</Button>
               </FormControl>
               </Box>
-              <Box overflow={'auto'}  textAlign={"center"}
-            sx={{bgcolor: '#000000', width: 900 }} >
+              <Box overflow={'auto'}  textAlign={"center"} sx={{bgcolor: '#000000', opacity:'0.8', width: 800, height: 600 }} >
                 <div>
                     {posts.map((item)=> {
                       const shite = item.lines
                       {/* console.log(typeof shite); */}
-                      
+                      console.log(shite)
                       const tits = item.title
                         /* return <p key={item.id}>{item.lines}</p> */
-                      return russia(shite,tits)
-                      
+                      return russia(shite,tits)                     
                     })} 
                 </div>
             </Box>
-            
-        </Box>
+            </Stack>
   );
 }
 export default Input;

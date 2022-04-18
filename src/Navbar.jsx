@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, bgcolor: '#15ab7e' }}>
       <AppBar position="static">
         <Toolbar>
           <Typography align="center" variant="h4" component="div" sx={{ flexGrow: 1 }}>
