@@ -1,3 +1,15 @@
+#About
+I created an website where one can search poems by Author, Title or verse.
+
+* Use PoetryDB API to fetch and display the data.
+* Used React and MUI for Frontend of the website.
+
+
+![picture alt](https://i.imgur.com/yJ7NcsT.png "Image")
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
