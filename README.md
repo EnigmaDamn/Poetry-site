@@ -1,7 +1,7 @@
-#About
+# About
 I created an website where one can search poems by Author, Title or verse.
 
-* Use PoetryDB API to fetch and display the data.
+* Use [PoetryDB API](https://github.com/thundercomb/poetrydb) to fetch and display the data.
 * Used React and MUI for Frontend of the website.
 
 
